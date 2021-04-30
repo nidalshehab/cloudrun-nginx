@@ -39,6 +39,8 @@ steps:
   - 'us-central1'
   - '--platform'
   - 'managed'
+  - '--port'
+  - '80'
 images:
         - 'gcr.io/yougo-projects/nginx-alpine:$COMMIT_SHA'
 
