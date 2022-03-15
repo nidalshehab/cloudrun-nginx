@@ -23,7 +23,7 @@ steps:
 # Push to GCR
 - name: 'gcr.io/cloud-builders/docker'
   id: 'Pushing image to GCR'
-  args: ['push', 'gcr.io/yougo-projects/nginx-alpine:$COMMIT_SHA']
+  args: ['push', 'gcr.io/yougo-projects-labs/nginx-alpine:$COMMIT_SHA']
   
 # Deploy frontend image to cloud run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -42,5 +42,5 @@ steps:
   - '--port'
   - '80'
 images:
-        - 'gcr.io/yougo-projects/nginx-alpine:$COMMIT_SHA'
+        - 'gcr.io/yougo-projects-labs/nginx-alpine:$COMMIT_SHA'
 
