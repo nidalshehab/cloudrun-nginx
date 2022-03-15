@@ -18,7 +18,7 @@
 steps:
 - id: 'build nginx image'
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/yougo-projects/nginx-alpine:$COMMIT_SHA', '.' ]
+  args: ['build', '-t', 'gcr.io/yougo-projects-labs/nginx-alpine:$COMMIT_SHA', '.' ]
   
 # Push to GCR
 - name: 'gcr.io/cloud-builders/docker'
