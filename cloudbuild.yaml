@@ -34,7 +34,7 @@ steps:
   - 'deploy'
   - 'nginx-alpine'
   - '--image'
-  - 'gcr.io/yougo-projects-labs/nginx-alpine:$COMMIT_SHA'
+  - 'gcr.io/yougo-k8-hardway-256417/nginx-alpine:$COMMIT_SHA'
   - '--region'
   - 'us-central1'
   - '--platform'
