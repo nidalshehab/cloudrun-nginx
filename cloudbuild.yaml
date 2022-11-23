@@ -18,12 +18,12 @@
 steps:
 - id: 'build nginx image'
   name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/yougo-k8-hardway-256417/nginx-alpine:$COMMIT_SHA', '.' ]
+  args: ['build', '-t', 'gcr.io/iac-kubernetes-project/nginx-alpine:$COMMIT_SHA', '.' ]
   
 # Push to GCR
 - name: 'gcr.io/cloud-builders/docker'
   id: 'Pushing image to GCR'
-  args: ['push', 'gcr.io/yougo-k8-hardway-256417/nginx-alpine:$COMMIT_SHA']
+  args: ['push', 'gcr.io/iac-kubernetes-project/nginx-alpine:$COMMIT_SHA']
   
 # Deploy frontend image to cloud run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -34,7 +34,7 @@ steps:
   - 'deploy'
   - 'nginx-alpine'
   - '--image'
-  - 'gcr.io/yougo-k8-hardway-256417/nginx-alpine:$COMMIT_SHA'
+  - 'gcr.io/iac-kubernetes-project/nginx-alpine:$COMMIT_SHA'
   - '--region'
   - 'us-central1'
   - '--platform'
@@ -42,5 +42,5 @@ steps:
   - '--port'
   - '80'
 images:
-        - 'gcr.io/yougo-k8-hardway-256417/nginx-alpine:$COMMIT_SHA'
+        - 'gcr.io/iac-kubernetes-project/nginx-alpine:$COMMIT_SHA'
 
